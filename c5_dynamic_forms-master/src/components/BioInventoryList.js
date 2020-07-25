@@ -9,7 +9,7 @@ const BioInventoryList = props => {
             if (bioInventory.name === '') {
                 return <BioInventoryForm key={index} id={bioInventory.id} handleSubmit={props.handleSubmit} />
             } else {
-                return <BioInventoryForm key={index} info={bioInventory} />
+                return <BioInventory key={index} info={bioInventory} />
             }
         }) 
     }

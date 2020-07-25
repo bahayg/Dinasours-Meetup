@@ -4,7 +4,7 @@ const BioInventory = (props) => {
     const { name, observer, date, place } = props.info;
     return (
         <div id="bioInvent">
-            <p>Name: {name} Observer: {observer} Date: {date} Place: {place} </p>
+            <p><b>Name:</b> {name} <b>Observer:</b> {observer} <b>Date:</b> {date} <b>Place:</b> {place} </p>
         </div>
     )
 }
