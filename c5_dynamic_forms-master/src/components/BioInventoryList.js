@@ -1,6 +1,7 @@
 import React from 'react';
 import BioInventory from './BioInventory';
 import BioInventoryForm from './BioInventoryForm'
+import './bioInventory.css'
 
 const BioInventoryList = props => {
 
@@ -14,7 +15,7 @@ const BioInventoryList = props => {
         }) 
     }
     return (
-        <div>
+        <div id="bioInvent">
             {bioInvIterate(props.arr)}
         </div>
     );
