@@ -19,25 +19,24 @@ const Trivia = () => {
         )
     }, []);
 
-    const question = () => {
-        loadedQuestions.map(loadedQuestion => {
-            let formattedQuestion ={
-                question: loadedQuestion.question
-            };
-            let answerChoices = [ ...loadedQuestion.incorrect_answers];
-            formattedQuestion.answer = Math.floor(Math.random()*3) + 1;
-            answerChoices.splice(
-                formattedQuestion.answer - 1,
-                0,
-                loadedQuestion.correct_answer
-                );
-                answerChoices.forEach((choice, index) => {
-                    formattedQuestion['choice' + (index + 1)] = choice;
-                })
-                return formattedQuestion
-        })}
+    // const question = () => {
+    //     loadedQuestions.map(loadedQuestion => {
+    //         let formattedQuestion ={
+    //             question: loadedQuestion.question
+    //         };
+    //         let answerChoices = [ ...loadedQuestion.incorrect_answers];
+    //         formattedQuestion.answer = Math.floor(Math.random()*3) + 1;
+    //         answerChoices.splice(
+    //             formattedQuestion.answer - 1,
+    //             0,
+    //             loadedQuestion.correct_answer
+    //             );
+    //             answerChoices.forEach((choice, index) => {
+    //                 formattedQuestion['choice' + (index + 1)] = choice;
+    //             })
+    //             return formattedQuestion
+    //     })}
     
-
     return (
         <>
         <Jumbotron>
@@ -47,8 +46,20 @@ const Trivia = () => {
         </Jumbotron>
 
         <div>
-            <p>{console.log(question)}</p>
+            {loadedQuestions.map(loadedQuestion => (
+                <div>
+                <p id="question">{loadedQuestion.question} </p>
+                <p>{loadedQuestion.incorrect_answers.map(incorrectAns => (
+                    <p>{incorrectAns}</p>
+                ))} </p>
+                <p>{loadedQuestion.correct_answer}</p>
+                </div>
+            ))}
         </div>
+
+        {/* <div>
+            <p>{console.log(question)}</p>
+        </div> */}
         </>
     )
 }
